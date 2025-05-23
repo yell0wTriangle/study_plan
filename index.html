@@ -1,0 +1,2792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Frontend Study Plan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Light beige background */
+            background-color: #F8F5EE;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background-color: #FFFFFF;
+            border-radius: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        .header {
+            color: #5C4033; /* Darker brown for headings */
+        }
+        .goal-box {
+            background-color: #FFFBEB; /* Slightly darker beige for goal */
+            border-left: 4px solid #D4A76A; /* Accent color */
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .day-card {
+            background-color: #FFFFFF;
+            border: 1px solid #E0DED7; /* Subtle border */
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        .day-title {
+            color: #7D5A47; /* Medium brown for day titles */
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        .checklist-item input[type="checkbox"] {
+            margin-right: 0.75rem;
+            accent-color: #D4A76A; /* Checkbox color */
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: 0.25rem;
+        }
+        .checklist-item label {
+            cursor: pointer;
+            flex-grow: 1;
+        }
+        .checklist-item input[type="checkbox"]:checked + label {
+            text-decoration: line-through;
+            color: #888;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            color: #A0A0A0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-4xl font-bold mb-4 text-center header">My 20-Day Frontend Study Plan</h1>
+        <p class="text-center text-lg mb-6 text-gray-600">Starting May 25, 2025</p>
+
+        <div class="goal-box">
+            <h2 class="text-xl font-semibold mb-2 header">My Goal:</h2>
+            <p class="text-gray-700">To successfully complete the remaining Frontend Path material, including solo projects and thorough review, within 20 days, studying 6-7 hours daily.</p>
+        </div>
+
+        <h2 class="text-2xl font-semibold mb-4 header">Daily Checklist:</h2>
+
+        <div class="day-card">
+            <h3 class="day-title text-xl">Day 1: Accessible Development Fundamentals</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="day1_1">
+                    <label for="day1_1">Welcome to Learn UI Design (2:16)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day1_2">
+                    <label for="day1_2">Common Design & Non-dev Roles (3:17)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day1_3">
+                    <label for="day1_3">Course Introduction (1:06)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day1_4">
+                    <label for="day1_4">White Space (4:45)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day1_5">
+                    <label for="day1_5">Alignment (3:06)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day1_6">
+                    <label for="day1_6">Design Challenge: 1 (4:20)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day1_7">
+                    <label for="day1_7">Contrast (4:26)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day1_8">
+                    <label for="day1_8">Scale (4:29)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day1_9">
+                    <label for="day1_9">Design Challenge: 2 (7:14)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day1_10">
+                    <label for="day1_10">Typography (6:12)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day1_11">
+                    <label for="day1_11">Color (5:41)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day1_12">
+                    <label for="day1_12">Design Challenge: 3 (4:07)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day1_13">
+                    <label for="day1_13">Visual Hierarchy (7:42)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day1_14">
+                    <label for="day1_14">Design Challenge: 4 (6:22)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day1_15">
+                    <label for="day1_15">The Final Challenge (5:29)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day1_16">
+                    <label for="day1_16">Closing Thoughts (0:59)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day1_17">
+                    <label for="day1_17">Review & Practice: Revisit challenging UI design concepts.</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <h3 class="day-title text-xl">Day 2: Accessible Development & Simple Layout</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="day2_1">
+                    <label for="day2_1">Let's learn to make the web accessible (1:06)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day2_2">
+                    <label for="day2_2">Understanding web accessibility (4:49)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day2_3">
+                    <label for="day2_3">Aside: Text contrast (3:49)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day2_4">
+                    <label for="day2_4">Aside: Use of color (1:18)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day2_5">
+                    <label for="day2_5">Text contrast (6:31)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day2_6">
+                    <label for="day2_6">Aside: Alternative text (5:33)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day2_7">
+                    <label for="day2_7">Aside: Links (7:19)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day2_8">
+                    <label for="day2_8">Links and alternative text (5:07)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day2_9">
+                    <label for="day2_9">Aside: Labels (6:12)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day2_10">
+                    <label for="day2_10">Aside: Radio buttons (1:52)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day2_11">
+                    <label for="day2_11">Labels (3:09)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day2_12">
+                    <label for="day2_12">Building a simple layout - intro (1:19)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day2_13">
+                    <label for="day2_13">Keeping it Ultra Simple (5:40)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day2_14">
+                    <label for="day2_14">Making our Layout Dark (5:48)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day2_15">
+                    <label for="day2_15">Challenge 1 (6:36)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day2_16">
+                    <label for="day2_16">Multi-Columns (4:35)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day2_17">
+                    <label for="day2_17">Working with Photographs (5:32)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day2_18">
+                    <label for="day2_18">Final Chapter Lesson (7:54)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day2_19">
+                    <label for="day2_19">Practice: Apply accessibility concepts to a simple layout.</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <h3 class="day-title text-xl">Day 3: Accessible Development & Project Refactoring</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="day3_1">
+                    <label for="day3_1">Semantic HTML (5:45)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day3_2">
+                    <label for="day3_2">Lists (4:42)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day3_3">
+                    <label for="day3_3">Text-size (3:21)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day3_4">
+                    <label for="day3_4">Headings (2:51)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day3_5">
+                    <label for="day3_5">ARIA (5:13)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day3_6">
+                    <label for="day3_6">ARIA live regions (5:50)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day3_7">
+                    <label for="day3_7">Aside: Accessible JavaScript (3:20)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day3_8">
+                    <label for="day3_8">Aside: Hiding content (2:36)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day3_9">
+                    <label for="day3_9">Aside: Skip Navigation Link Part 1 (3:31)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day3_10">
+                    <label for="day3_10">Aside: Skip Navigation Link Part 2 (2:00)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day3_11">
+                    <label for="day3_11">Skip Navigation Link (1:43)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day3_12">
+                    <label for="day3_12">Final challenge part 1 (2:38)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day3_13">
+                    <label for="day3_13">Final challenge part 2 (4:12)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day3_14">
+                    <label for="day3_14">Outro (1:13)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day3_15">
+                    <label for="day3_15">Project Refactoring: Introduction & Defining the HTML (6:07)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day3_16">
+                    <label for="day3_16">Fixing the Color & Contrast (3:57)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day3_17">
+                    <label for="day3_17">Fixing the Type & Visual Hierarchy (6:56)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day3_18">
+                    <label for="day3_18">Fixing White Space (5:32)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day3_19">
+                    <label for="day3_19">Initial Media Queries (6:14)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day3_20">
+                    <label for="day3_20">Tablet Media Queries (4:55)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day3_21">
+                    <label for="day3_21">Desktop Media Query (8:37)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day3_22">
+                    <label for="day3_22">Review & Practice: Consolidate accessibility knowledge.</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <h3 class="day-title text-xl">Day 4: Essential CSS Concepts - NFT Site</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="day4_1">
+                    <label for="day4_1">Essential CSS Concepts Intro (1:23)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day4_2">
+                    <label for="day4_2">Build an NFT Site Intro (1:35)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day4_3">
+                    <label for="day4_3">Semantic HTML - Header, Main, Section, Footer (5:41)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day4_4">
+                    <label for="day4_4">Set up the CSS basics (3:58)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day4_5">
+                    <label for="day4_5">Aside: Margins - strange behaviour (5:39)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day4_6">
+                    <label for="day4_6">Header (3:44)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day4_7">
+                    <label for="day4_7">The first section - image (2:37)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day4_8">
+                    <label for="day4_8">The first section - text (5:49)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day4_9">
+                    <label for="day4_9">Aside: Hover and active states (10:17)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day4_10">
+                    <label for="day4_10">The first section - links (2:21)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day4_11">
+                    <label for="day4_11">Aside: background full width (5:46)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day4_12">
+                    <label for="day4_12">Content Container (3:41)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day4_13">
+                    <label for="day4_13">CSS organisation (3:16)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day4_14">
+                    <label for="day4_14">The second section colors (2:54)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day4_15">
+                    <label for="day4_15">A quick word about Flexbox (0:50)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day4_16">
+                    <label for="day4_16">The second section imgs (4:24)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day4_17">
+                    <label for="day4_17">Style the Footer (2:10)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day4_18">
+                    <label for="day4_18">Grouping Selectors (4:25)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day4_19">
+                    <label for="day4_19">Warning: Viewing Problems (0:44)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day4_20">
+                    <label for="day4_20">Practice: Work on the NFT Site project.</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <h3 class="day-title text-xl">Day 5: Essential CSS Concepts - Challenges & Coworking Site</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="day5_1">
+                    <label for="day5_1">Aside: Specificity (6:20)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day5_2">
+                    <label for="day5_2">Aside: Compound selectors (6:19)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day5_3">
+                    <label for="day5_3">Aside: Compound selectors and specificity (4:51)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day5_4">
+                    <label for="day5_4">Line-height debug (3:19)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day5_5">
+                    <label for="day5_5">CSS specificity and !important keyword (2:53)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day5_6">
+                    <label for="day5_6">Aside: Buttons/Links (3:21)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day5_7">
+                    <label for="day5_7">Style the buttons individually new (5:58)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day5_8">
+                    <label for="day5_8">Aside: Inline-block (3:34)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day5_9">
+                    <label for="day5_9">space out the buttons (2:34)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day5_10">
+                    <label for="day5_10">Aside: A main class and a modifier class (4:05)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day5_11">
+                    <label for="day5_11">Refactor the buttons (3:17)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day5_12">
+                    <label for="day5_12">Aside: Flexbox flex-wrap (1:18)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day5_13">
+                    <label for="day5_13">Aside: Overflow (6:22)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day5_14">
+                    <label for="day5_14">Aside: CSS float (5:21)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day5_15">
+                    <label for="day5_15">CSS Fundamentals: Challenges (66 min) - complete all challenges</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day5_16">
+                    <label for="day5_16">Build a Coworking Space Site (70 min) - complete the project</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day5_17">
+                    <label for="day5_17">Solo Project - Oldagram (3:39) - start/continue working on it</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day5_18">
+                    <label for="day5_18">Review: All Essential CSS concepts and challenges.</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <h3 class="day-title text-xl">Day 6: Responsive Design - Site & Splash Page</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_1">
+                    <label for="day6_1">Module intro (1:48)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_2">
+                    <label for="day6_2">Responsive site intro (2:03)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_3">
+                    <label for="day6_3">Thinking responsively (2:33)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_4">
+                    <label for="day6_4">Aside: Relative units and percentages (5:21)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_5">
+                    <label for="day6_5">Create flexible containers with percentage units (2:23)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_6">
+                    <label for="day6_6">Controlling the width of images (2:45)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_7">
+                    <label for="day6_7">Set width constraints with max-width (5:01)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_8">
+                    <label for="day6_8">Aside: The em unit (7:35)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_9">
+                    <label for="day6_9">Set font sizes with em (3:27)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_10">
+                    <label for="day6_10">Aside: Margin and padding with em (6:41)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_11">
+                    <label for="day6_11">Set margin and padding with em (5:27)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_12">
+                    <label for="day6_12">Aside: The compounding issue with em (4:37)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_13">
+                    <label for="day6_13">Aside: The rem unit (2:46)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_14">
+                    <label for="day6_14">Change font sizes to rem (3:14)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_15">
+                    <label for="day6_15">Text line height (3:11)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_16">
+                    <label for="day6_16">How do you decide which unit to use? (1:45)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_17">
+                    <label for="day6_17">Aside: Media queries (7:30)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_18">
+                    <label for="day6_18">Add media queries to your site (5:48)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_19">
+                    <label for="day6_19">Think "mobile-first" (2:26)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_20">
+                    <label for="day6_20">Mobile-first in action (1:34)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_21">
+                    <label for="day6_21">Common Breakpoints (2:14)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_22">
+                    <label for="day6_22">Add a new breakpoint (3:20)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_23">
+                    <label for="day6_23">Adapt the buttons for smaller screens (2:45)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_24">
+                    <label for="day6_24">Adjust font size for smaller screens (4:26)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_25">
+                    <label for="day6_25">Create a mobile-first navigation (4:21)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_26">
+                    <label for="day6_26">Challenge: Narrow screens (3:43)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_27">
+                    <label for="day6_27">Challenge: Wider screens (1:17)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_28">
+                    <label for="day6_28">Solution: Wider screens (2:30)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_29">
+                    <label for="day6_29">The viewport meta tag (3:50)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_30">
+                    <label for="day6_30">Aside: Create a flexbox image grid (6:18)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_31">
+                    <label for="day6_31">Wrap the featured items with flexbox (3:37)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_32">
+                    <label for="day6_32">Recap (1:23)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_33">
+                    <label for="day6_33">Deploy your site to Netlify (1:06)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_34">
+                    <label for="day6_34">Product splash page intro (1:17)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_35">
+                    <label for="day6_35">Style the intro container (3:34)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_36">
+                    <label for="day6_36">Style main content (4:36)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_37">
+                    <label for="day6_37">Style the text (6:01)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_38">
+                    <label for="day6_38">Aside: Transform text (1:24)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_39">
+                    <label for="day6_39">Uppercase text (1:11)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_40">
+                    <label for="day6_40">Add a breakpoint for wider screens (4:01)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_41">
+                    <label for="day6_41">Aside: Viewport units (3:34)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_42">
+                    <label for="day6_42">Viewport sized intro container (2:57)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_43">
+                    <label for="day6_43">Adjust content for wider screens (3:32)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_44">
+                    <label for="day6_44">Apply a full background image (2:31)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_45">
+                    <label for="day6_45">Style the form inputs (3:40)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_46">
+                    <label for="day6_46">Style the focus state (3:10)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_47">
+                    <label for="day6_47">Style the submit button (5:57)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_48">
+                    <label for="day6_48">Button modifiers (2:33)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_49">
+                    <label for="day6_49">Aside: Reordering flex items (3:55)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_50">
+                    <label for="day6_50">Adjust visual order of the intro text (5:21)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_51">
+                    <label for="day6_51">Adjust line length (1:32)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_52">
+                    <label for="day6_52">Aside: Control the size of elements with box-sizing (5:38)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_53">
+                    <label for="day6_53">Apply box-sizing to the page (3:37)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_54">
+                    <label for="day6_54">Product splash page recap (0:53)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_55">
+                    <label for="day6_55">Deploy your splash page to Netlify (0:45)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day6_56">
+                    <label for="day6_56">Practice: Build a responsive layout from scratch.</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <h3 class="day-title text-xl">Day 7: Responsive Design - CSS Grid & Solo Project</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="day7_1">
+                    <label for="day7_1">Intro (2:15)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day7_2">
+                    <label for="day7_2">Starter Code (1:33)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day7_3">
+                    <label for="day7_3">Aside: Grid Columns and Gap (4:31)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day7_4">
+                    <label for="day7_4">Aside: fr units (3:46)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day7_5">
+                    <label for="day7_5">The Mobile Layout (2:58)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day7_6">
+                    <label for="day7_6">Aside: Grid rows and implicit grid (3:59)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day7_7">
+                    <label for="day7_7">Aside: Span (6:54)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day7_8">
+                    <label for="day7_8">Tablet view with span (3:14)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day7_9">
+                    <label for="day7_9">Aside: Repeat function (2:45)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day7_10">
+                    <label for="day7_10">Aside: grid lines (6:00)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day7_11">
+                    <label for="day7_11">Laptop view with grid lines (6:25)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day7_12">
+                    <label for="day7_12">Aside: grid template areas and Dev Tools (7:58)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day7_13">
+                    <label for="day7_13">Convert to grid template areas (5:54)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day7_14">
+                    <label for="day7_14">Aside: A responsive image grid (5:00)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day7_15">
+                    <label for="day7_15">Aside: grid-auto-flow: dense and MinMax (5:32)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day7_16">
+                    <label for="day7_16">Use minmax (2:33)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day7_17">
+                    <label for="day7_17">The header and footer (6:56)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day7_18">
+                    <label for="day7_18">Outro (1:44)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day7_19">
+                    <label for="day7_19">Solo Project - Learning Journal (3:12) - complete the project</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day7_20">
+                    <label for="day7_20">Review: All Responsive Design concepts.</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <h3 class="day-title text-xl">Day 8: Git & GitHub for Collaboration & APIs Intro</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="day8_1">
+                    <label for="day8_1">Code reviews (22 min)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day8_2">
+                    <label for="day8_2">Introduction to Branching and Pull Requests (2:12)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day8_3">
+                    <label for="day8_3">Make an Issue in GitHub (1:59)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day8_4">
+                    <label for="day8_4">Creating a Branch (3:14)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day8_5">
+                    <label for="day8_5">Creating a Pull Request (3:27)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day8_6">
+                    <label for="day8_6">Resolving Merge Conflicts (3:53)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day8_7">
+                    <label for="day8_7">Pulling (3:46)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day8_8">
+                    <label for="day8_8">SSH/GPG Keys in GitHub (3:43)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day8_9">
+                    <label for="day8_9">APIs Module Intro (4:56)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day8_10">
+                    <label for="day8_10">What is an API? (8:01)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day8_11">
+                    <label for="day8_11">Clients & Servers (3:29)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day8_12">
+                    <label for="day8_12">Requests & Responses (5:32)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day8_13">
+                    <label for="day8_13">BoredBot Intro (1:15)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day8_14">
+                    <label for="day8_14">JSON Review (5:14)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day8_15">
+                    <label for="day8_15">First fetch (2:51)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day8_16">
+                    <label for="day8_16">.then() and Asynchronous JavaScript (2:19)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day8_17">
+                    <label for="day8_17">Dog API Fetch and DOM Practice (2:51)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day8_18">
+                    <label for="day8_18">Fetch idea from Bored API (2:54)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day8_19">
+                    <label for="day8_19">Aside - apis.scrimba.com? (1:51)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day8_20">
+                    <label for="day8_20">BoredBot - HTML (1:34)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day8_21">
+                    <label for="day8_21">BoredBot - CSS (4:51)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day8_22">
+                    <label for="day8_22">BoredBot - JavaScript (6:44)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day8_23">
+                    <label for="day8_23">BoredBot - Extra Styling (4:18)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day8_24">
+                    <label for="day8_24">BoredBot - Improve A11y (4:11)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day8_25">
+                    <label for="day8_25">Section Recap (1:29)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day8_26">
+                    <label for="day8_26">Practice: Review Git/GitHub and build a simple API fetcher.</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <h3 class="day-title text-xl">Day 9: APIs - URLs, REST & BlogSpace (Part 1)</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="day9_1">
+                    <label for="day9_1">Section Intro (1:29)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day9_2">
+                    <label for="day9_2">HTTP Requests (9:56)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day9_3">
+                    <label for="day9_3">Requests - URLs and Endpoints (7:00)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day9_4">
+                    <label for="day9_4">Requests - Methods (7:40)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day9_5">
+                    <label for="day9_5">BlogSpace - GET first 5 blog posts (3:30)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day9_6">
+                    <label for="day9_6">BlogSpace - Display blogs on page (4:06)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day9_7">
+                    <label for="day9_7">BlogSpace - Add styling (6:35)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day9_8">
+                    <label for="day9_8">BlogSpace - New post form (3:38)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day9_9">
+                    <label for="day9_9">BlogSpace - Add style to form (3:02)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day9_10">
+                    <label for="day9_10">BlogSpace - Form submit event listener (3:37)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day9_11">
+                    <label for="day9_11">Requests - Body (5:42)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day9_12">
+                    <label for="day9_12">Requests - Headers (4:32)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day9_13">
+                    <label for="day9_13">BlogSpace - Send new post to server (3:08)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day9_14">
+                    <label for="day9_14">BlogSpace - Add new post to list of posts (4:20)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day9_15">
+                    <label for="day9_15">BlogSpace - Posts Refactor (5:42)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day9_16">
+                    <label for="day9_16">BlogSpace - Reset form (4:42)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day9_17">
+                    <label for="day9_17">Practice: Work on the BlogSpace project.</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <h3 class="day-title text-xl">Day 10: APIs - URLs, REST & BlogSpace (Part 2) & Async JS Intro</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="day10_1">
+                    <label for="day10_1">REST (5:41)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day10_2">
+                    <label for="day10_2">REST API Design (9:59)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day10_3">
+                    <label for="day10_3">Nested Resources (4:54)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day10_4">
+                    <label for="day10_4">URL Parameters - JSON Placeholder API (3:06)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day10_5">
+                    <label for="day10_5">Query Strings (5:58)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day10_6">
+                    <label for="day10_6">Query String Practice - OpenWeatherMap API (4:35)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day10_7">
+                    <label for="day10_7">Solo Project - Color Scheme Generator (3:08) - complete the project</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day10_8">
+                    <label for="day10_8">Section Recap (2:38)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day10_9">
+                    <label for="day10_9">Async JS Intro & War Project (6:36)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day10_10">
+                    <label for="day10_10">Callbacks Setup Challenge (2:28)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day10_11">
+                    <label for="day10_11">Callback functions intro (3:38)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day10_12">
+                    <label for="day10_12">Separate event listener callback (2:53)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day10_13">
+                    <label for="day10_13">Callbacks - revisiting setTimeout (4:10)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day10_14">
+                    <label for="day10_14">Callbacks - revisiting array.filter (7:42)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day10_15">
+                    <label for="day10_15">Callbacks - make own filterArray function (6:06)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day10_16">
+                    <label for="day10_16">Callbacks - put our custom filterArray function to use (4:17)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day10_17">
+                    <label for="day10_17">Thought experiment: what if `fetch` used callbacks? (2:20)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day10_18">
+                    <label for="day10_18">Promises (5:07)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day10_19">
+                    <label for="day10_19">Context: method chaining (7:07)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day10_20">
+                    <label for="day10_20">Practice: Continue with BlogSpace and start War project.</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <h3 class="day-title text-xl">Day 11: APIs - Async JS & War (Part 1)</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="day11_1">
+                    <label for="day11_1">Promises - .then() chaining (3:25)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day11_2">
+                    <label for="day11_2">Promises - .then() (2:11)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day11_3">
+                    <label for="day11_3">Promises - passing basic values in the chain (5:18)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day11_4">
+                    <label for="day11_4">War - save deckId for later use (1:45)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day11_5">
+                    <label for="day11_5">War - draw 2 cards from our deck (6:19)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day11_6">
+                    <label for="day11_6">War - Display our card images (3:59)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day11_7">
+                    <label for="day11_7">War - Styling part 1 (8:09)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day11_8">
+                    <label for="day11_8">War - Styling part 2 (6:46)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day11_9">
+                    <label for="day11_9">War - Refactor card image placement (5:48)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day11_10">
+                    <label for="day11_10">War - Determine the winning card part 1 (8:32)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day11_11">
+                    <label for="day11_11">War - Determine winning card part 2 (5:48)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day11_12">
+                    <label for="day11_12">War - display remaining cards when drawing (6:51)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day11_13">
+                    <label for="day11_13">War - Display remaining cards on new deck (1:47)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day11_14">
+                    <label for="day11_14">War - Disable the draw button when we get to 0 cards remaining (3:45)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day11_15">
+                    <label for="day11_15">War - Keep score (4:44)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day11_16">
+                    <label for="day11_16">War - Display the final winner (4:50)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day11_17">
+                    <label for="day11_17">A quick look at Async/Await (6:47)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day11_18">
+                    <label for="day11_18">Solo Project - Movie Watchlist (3:08) - complete the project</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day11_19">
+                    <label for="day11_19">Practice: Work on the War project.</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <h3 class="day-title text-xl">Day 12: APIs - Promise Rejection & Capstone</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_1">
+                    <label for="day12_1">Unlock exclusive API projects and code reviews (1:36)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_2">
+                    <label for="day12_2">Section Recap (3:40)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_3">
+                    <label for="day12_3">Section Intro (1:45)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_4">
+                    <label for="day12_4">Dashboard wireframe (2:15)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_5">
+                    <label for="day12_5">Get photo from Unsplash (4:13)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_6">
+                    <label for="day12_6">Add Author Info (3:46)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_7">
+                    <label for="day12_7">Choosing a layout method (2:46)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_8">
+                    <label for="day12_8">Set up flexbox (5:35)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_9">
+                    <label for="day12_9">Promises review (4:59)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_10">
+                    <label for="day12_10">Promise rejection (6:13)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_11">
+                    <label for="day12_11">Promise rejection practice (3:32)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_12">
+                    <label for="day12_12">Crypto - Add cryptocurrency data (3:36)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_13">
+                    <label for="day12_13">Crypto - Get Dogecoin data (2:10)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_14">
+                    <label for="day12_14">Check for error responses (7:00)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_15">
+                    <label for="day12_15">Crypto - Display name and icon (4:37)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_16">
+                    <label for="day12_16">Crypto - get prices (4:22)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_17">
+                    <label for="day12_17">Time - Add current time with JavaScript (7:35)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_18">
+                    <label for="day12_18">Time - Display time on page (3:50)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_19">
+                    <label for="day12_19">Weather - start (6:16)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_20">
+                    <label for="day12_20">Thought experiment - getCurrentLocation as a promise-based API? (2:40)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_21">
+                    <label for="day12_21">Weather - Get user's current weather (4:46)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_22">
+                    <label for="day12_22">Weather - Add icon (4:24)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_23">
+                    <label for="day12_23">Weather - Add temp and city (2:52)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_24">
+                    <label for="day12_24">Weather - CSS (8:07)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_25">
+                    <label for="day12_25">Chrome extension time! (8:10)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_26">
+                    <label for="day12_26">Quick update - Modern CSS (1:33)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_27">
+                    <label for="day12_27">Update - using await (8:15)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_28">
+                    <label for="day12_28">Update - try...catch (4:12)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_29">
+                    <label for="day12_29">Module Outro (4:26)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day12_30">
+                    <label for="day12_30">Practice: Consolidate API knowledge and work on Capstone project.</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <h3 class="day-title text-xl">Day 13: React Basics - Static Pages & Data-Driven React</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_1">
+                    <label for="day13_1">Course Introduction (7:27)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_2">
+                    <label for="day13_2">What we'll learn (2:25)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_3">
+                    <label for="day13_3">First React Code (6:36)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_4">
+                    <label for="day13_4">First React Challenge (2:56)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_5">
+                    <label for="day13_5">Local Setup w/ Vite (6:03)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_6">
+                    <label for="day13_6">Libraries/Frameworks (8:52)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_7">
+                    <label for="day13_7">React.createElement() (2:47)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_8">
+                    <label for="day13_8">JSX (2:13)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_9">
+                    <label for="day13_9">Why React? It's Composable! (7:24)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_10">
+                    <label for="day13_10">Why React? It's Declarative! (5:31)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_11">
+                    <label for="day13_11">Random housekeeping (8:42)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_12">
+                    <label for="day13_12">ReactFacts Project - Markup (3:39)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_13">
+                    <label for="day13_13">Pop quiz (6:10)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_14">
+                    <label for="day13_14">Custom Components (6:41)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_15">
+                    <label for="day13_15">Custom Components Challenge Part 2 (3:34)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_16">
+                    <label for="day13_16">Custom Components Quiz (2:43)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_17">
+                    <label for="day13_17">Fragments (2:27)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_18">
+                    <label for="day13_18">Custom Components - Parent/Child Components (5:19)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_19">
+                    <label for="day13_19">Styling with Classes (8:42)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_20">
+                    <label for="day13_20">Organizing Components (5:23)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_21">
+                    <label for="day13_21">Make Mental Outline of Project (3:50)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_22">
+                    <label for="day13_22">Initial Project Setup (4:39)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_23">
+                    <label for="day13_23">ReactFacts Project - Navbar & Styling (8:04)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_24">
+                    <label for="day13_24">ReactFacts Project - Main Content Section (6:36)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_25">
+                    <label for="day13_25">ReactFacts Project - Coloring the Bullets (2:08)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_26">
+                    <label for="day13_26">ReactFacts Project - Add Background Image (4:46)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_27">
+                    <label for="day13_27">Section 1 Recap (2:10)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_28">
+                    <label for="day13_28">Section 2 Intro (2:11)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_29">
+                    <label for="day13_29">Travel Journal - Header (7:30)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_30">
+                    <label for="day13_30">Travel Journal - Entry Component (10:06)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_31">
+                    <label for="day13_31">Problem - Not reusable (2:30)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_32">
+                    <label for="day13_32">Props Part 1: Understanding the Concept (3:17)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_33">
+                    <label for="day13_33">Props Part 2: Reusable Components (1:53)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_34">
+                    <label for="day13_34">Aside: JS inside JSX (7:45)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_35">
+                    <label for="day13_35">Props part 3: Create a contact component (3:47)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_36">
+                    <label for="day13_36">Props part 4: Passing data into a component (7:41)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_37">
+                    <label for="day13_37">Props part 5: Receiving props in a component (7:31)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_38">
+                    <label for="day13_38">Prop quiz! (Get it??) (4:25)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_39">
+                    <label for="day13_39">Destructuring props (5:10)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_40">
+                    <label for="day13_40">Props practice (8:57)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_41">
+                    <label for="day13_41">Non-string props (6:13)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_42">
+                    <label for="day13_42">Importing static assets (3:01)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_43">
+                    <label for="day13_43">Pass props to Entry component (6:08)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_44">
+                    <label for="day13_44">Review - array .map() (7:23)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_45">
+                    <label for="day13_45">React can render arrays (5:17)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_46">
+                    <label for="day13_46">Mapping components (6:05)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_47">
+                    <label for="day13_47">Map quiz! (4:03)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_48">
+                    <label for="day13_48">Travel Journal: Map Entry components (6:44)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_49">
+                    <label for="day13_49">Travel Journal: key prop (4:13)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_50">
+                    <label for="day13_50">Travel Journal: Pass object as props (5:38)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_51">
+                    <label for="day13_51">Travel Journal: Spread object as props (4:14)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_52">
+                    <label for="day13_52">Section 2 Recap (1:56)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day13_53">
+                    <label for="day13_53">Practice: Build a simple static React app and a data-driven component.</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <h3 class="day-title text-xl">Day 14: React Basics - State & Forms (Part 1)</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="day14_1">
+                    <label for="day14_1">Section 3 Intro (4:04)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day14_2">
+                    <label for="day14_2">Chef Claude: Header (7:58)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day14_3">
+                    <label for="day14_3">Chef Claude: form (9:32)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day14_4">
+                    <label for="day14_4">Chef Claude: Project overview (1:44)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day14_5">
+                    <label for="day14_5">Event Listeners (6:26)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day14_6">
+                    <label for="day14_6">Chef Claude: Map ingredients list (9:34)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day14_7">
+                    <label for="day14_7">Props vs. State: Props (4:18)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day14_8">
+                    <label for="day14_8">Props vs. State: State (5:26)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day14_9">
+                    <label for="day14_9">useState (5:20)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day14_10">
+                    <label for="day14_10">useState array destructuring (1:58)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day14_11">
+                    <label for="day14_11">Changing state (4:57)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day14_12">
+                    <label for="day14_12">State practice (6:48)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day14_13">
+                    <label for="day14_13">Updating state with a callback function (5:48)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day14_14">
+                    <label for="day14_14">Changing state quiz (2:11)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day14_15">
+                    <label for="day14_15">Ternary practice (4:00)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day14_16">
+                    <label for="day14_16">Toggling state (6:38)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day14_17">
+                    <label for="day14_17">Complex state: Arrays (9:28)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day14_18">
+                    <label for="day14_18">Chef Claude: Refactor array state (3:26)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day14_19">
+                    <label for="day14_19">Complex state: Objects (6:50)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day14_20">
+                    <label for="day14_20">Complex state: updating state objects (4:38)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day14_21">
+                    <label for="day14_21">React forms intro (5:09)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day14_22">
+                    <label for="day14_22">Form basics (7:29)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day14_23">
+                    <label for="day14_23">Form submission (6:40)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day14_24">
+                    <label for="day14_24">Form action (3:59)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day14_25">
+                    <label for="day14_25">Chef Claude: Refactor form submission (2:49)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day14_26">
+                    <label for="day14_26">Forms: textarea & defaultValue (3:07)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day14_27">
+                    <label for="day14_27">Practice: Work on Chef Claude project, focusing on state and forms.</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <h3 class="day-title text-xl">Day 15: React Basics - State & Forms (Part 2) & Side Effects</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_1">
+                    <label for="day15_1">Forms: radio (7:23)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_2">
+                    <label for="day15_2">Forms: checkbox (3:44)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_3">
+                    <label for="day15_3">Forms: select and option (5:38)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_4">
+                    <label for="day15_4">Forms: Object.fromEntries (4:12)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_5">
+                    <label for="day15_5">Chef Claude: conditional rendering intro (2:13)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_6">
+                    <label for="day15_6">Conditional rendering: && (6:22)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_7">
+                    <label for="day15_7">Conditional rendering: Why does && work? (4:23)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_8">
+                    <label for="day15_8">Conditional rendering practice: && (5:01)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_9">
+                    <label for="day15_9">Conditional rendering: ternary (5:30)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_10">
+                    <label for="day15_10">Conditional rendering practice (4:29)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_11">
+                    <label for="day15_11">Conditional rendering quiz (2:14)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_12">
+                    <label for="day15_12">Chef Claude: conditional rendering challenge 1 (4:56)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_13">
+                    <label for="day15_13">Chef Claude: conditional rendering challenge 2 (2:08)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_14">
+                    <label for="day15_14">Chef Claude: Get recipe placeholder challenge (7:39)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_15">
+                    <label for="day15_15">Passing state as props (7:00)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_16">
+                    <label for="day15_16">Setting state from child components (8:02)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_17">
+                    <label for="day15_17">Passing data around React (7:17)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_18">
+                    <label for="day15_18">Sound pads challenge, part 1 (4:12)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_19">
+                    <label for="day15_19">Dynamic styles (6:26)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_20">
+                    <label for="day15_20">Sound pads challenge, part 2 (3:45)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_21">
+                    <label for="day15_21">Sound pads challenge, part 3 (4:11)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_22">
+                    <label for="day15_22">Sound pads challenge part 4.1 - local state (4:30)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_23">
+                    <label for="day15_23">Sound pads challenge part 4.2 - shared state (6:19)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_24">
+                    <label for="day15_24">Sound pads challenge part 4.3 - updating item in array (11:21)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_25">
+                    <label for="day15_25">Chef Claude challenge: refactor to separate components (9:42)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_26">
+                    <label for="day15_26">API Sign Ups (8:49)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_27">
+                    <label for="day15_27">AI code walkthrough (7:04)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_28">
+                    <label for="day15_28">Challenge quiz: prep to get recipe from the AI chef (2:52)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_29">
+                    <label for="day15_29">Challenge: Get recipe from the AI chef (7:20)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_30">
+                    <label for="day15_30">Format recipe response (5:05)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_31">
+                    <label for="day15_31">Section 3 Outro (2:17)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_32">
+                    <label for="day15_32">Section 4 Intro (2:38)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_33">
+                    <label for="day15_33">Meme Generator Starting Point (2:26)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_34">
+                    <label for="day15_34">Meme Generator State (2:43)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_35">
+                    <label for="day15_35">Meme Generator - Controlled Components - part 1 (5:46)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_36">
+                    <label for="day15_36">Meme Generator - Controlled Components - part 2 (5:40)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_37">
+                    <label for="day15_37">Meme Generator - Planning data fetch (2:09)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_38">
+                    <label for="day15_38">Functional programming in React (4:53)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_39">
+                    <label for="day15_39">Fetching data in React (6:00)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_40">
+                    <label for="day15_40">Intro to useEffect (2:43)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_41">
+                    <label for="day15_41">useEffect() syntax and default behavior (3:49)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_42">
+                    <label for="day15_42">useEffect() Dependencies array (7:29)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_43">
+                    <label for="day15_43">useEffect empty dependencies array (2:37)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_44">
+                    <label for="day15_44">useEffect quiz! (4:56)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_45">
+                    <label for="day15_45">useEffect practice! (4:41)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_46">
+                    <label for="day15_46">Meme Generator - Fetch Memes (7:40)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_47">
+                    <label for="day15_47">State and Effect practices (7:57)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_48">
+                    <label for="day15_48">useEffect cleanup function (8:17)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_49">
+                    <label for="day15_49">Meme Generator - Get random meme (4:36)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_50">
+                    <label for="day15_50">Sneak peak: refs (9:54)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_51">
+                    <label for="day15_51">useEffect practice: scrollIntoView() (6:11)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_52">
+                    <label for="day15_52">scrollIntoView() iFrame bug fix (3:22)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_53">
+                    <label for="day15_53">Section 4 Outro (1:42)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day15_54">
+                    <label for="day15_54">Practice: Continue with Chef Claude and start Meme Generator project.</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <h3 class="day-title text-xl">Day 16: React Capstone Projects</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_1">
+                    <label for="day16_1">Tenzies Intro (2:11)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_2">
+                    <label for="day16_2">Tenzies: Setup (8:10)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_3">
+                    <label for="day16_3">Tenzies: Die component (7:06)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_4">
+                    <label for="day16_4">Tenzies: Generate 10 random numbers (5:28)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_5">
+                    <label for="day16_5">Tenzies: Map array to Die components (2:59)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_6">
+                    <label for="day16_6">Tenzies: Roll dice button (4:53)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_7">
+                    <label for="day16_7">Tenzies: Change dice to objects (4:32)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_8">
+                    <label for="day16_8">Tenzies: Styling held dice (3:14)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_9">
+                    <label for="day16_9">Tenzies: Hold dice - part 1 (6:37)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_10">
+                    <label for="day16_10">Tenzies: Hold dice - part 2 (4:26)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_11">
+                    <label for="day16_11">Tenzies: Hold dice - part 3 (3:48)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_12">
+                    <label for="day16_12">Tenzies: End game - part 1 (6:09)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_13">
+                    <label for="day16_13">Tenzies: End game - part 2 (5:42)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_14">
+                    <label for="day16_14">Tenzies: End game part 3 (2:51)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_15">
+                    <label for="day16_15">Tenzies: Lazy State Initialization (3:13)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_16">
+                    <label for="day16_16">Tenzies: New game (3:06)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_17">
+                    <label for="day16_17">Tenzies: Accessibility Improvements (3:51)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_18">
+                    <label for="day16_18">Tenzies: Accessibility Improvements - part 2 (7:13)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_19">
+                    <label for="day16_19">Tenzies Outro (1:16)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_20">
+                    <label for="day16_20">Assembly Endgame Intro (2:01)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_21">
+                    <label for="day16_21">Assembly Endgame - Project Planning (5:19)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_22">
+                    <label for="day16_22">Assembly Endgame - Header Section (3:46)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_23">
+                    <label for="day16_23">Assembly Endgame - Status Section (3:37)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_24">
+                    <label for="day16_24">Assembly Endgame - Languages List (5:39)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_25">
+                    <label for="day16_25">Assembly Endgame - Word Display (5:30)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_26">
+                    <label for="day16_26">Assembly Endgame - Keyboard (4:06)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_27">
+                    <label for="day16_27">Assembly Endgame - Save the guessed letters (7:13)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_28">
+                    <label for="day16_28">Assembly Endgame - Keyboard letter styles for guesses (9:21)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_29">
+                    <label for="day16_29">Assembly Endgame - Only display correctly guessed letters in word (2:46)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_30">
+                    <label for="day16_30">Assembly Endgame - Wrong guess count (5:03)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_31">
+                    <label for="day16_31">Assembly Endgame - Lost languages (5:03)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_32">
+                    <label for="day16_32">Assembly Endgame - isGameOver (6:05)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_33">
+                    <label for="day16_33">Assembly Endgame - Display won/lost status (8:03)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_34">
+                    <label for="day16_34">Assembly Endgame - Quick CSS alignment fix (2:36)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_35">
+                    <label for="day16_35">Assembly Endgame - Conditional rendering with a helper function (2:56)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_36">
+                    <label for="day16_36">Assembly Endgame - Backlog inventory (2:06)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_37">
+                    <label for="day16_37">Assembly Endgame - Farewell messages (10:41)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_38">
+                    <label for="day16_38">Assembly Endgame - Disable keyboard when the game is over (1:33)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_39">
+                    <label for="day16_39">Assembly Endgame - Make the game more a11y-friendly part 1 (7:43)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_40">
+                    <label for="day16_40">Assembly Endgame - Make the game more a11y-friendly part 2 (3:51)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_41">
+                    <label for="day16_41">Assembly Endgame - Choose random word (3:30)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_42">
+                    <label for="day16_42">Assembly Endgame - New game button resets the game (2:12)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_43">
+                    <label for="day16_43">Assembly Endgame - Display missed letters when lost (3:39)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_44">
+                    <label for="day16_44">Assembly Endgame Outro (1:21)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_45">
+                    <label for="day16_45">Course Outro (7:14)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day16_46">
+                    <label for="day16_46">Practice: Complete Tenzies and Assembly Endgame projects.</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <h3 class="day-title text-xl">Day 17: Advanced React - Reusability (Part 1)</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_1">
+                    <label for="day17_1">Advanced React Intro (4:38)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_2">
+                    <label for="day17_2">Button props review challenge (4:13)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_3">
+                    <label for="day17_3">Aside children in HTML (2:12)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_4">
+                    <label for="day17_4">Aside React Children (1:53)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_5">
+                    <label for="day17_5">Challenge - Button w/ Children (1:38)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_6">
+                    <label for="day17_6">Button - More Complex React Children (5:37)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_7">
+                    <label for="day17_7">Challenge - add onClick event listener (2:52)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_8">
+                    <label for="day17_8">Aside - props spreading (3:24)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_9">
+                    <label for="day17_9">Aside - Destructuring props (3:32)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_10">
+                    <label for="day17_10">Button - size prop (5:16)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_11">
+                    <label for="day17_11">Button fix className issue (6:55)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_12">
+                    <label for="day17_12">Challenge - Button w/ Variants (4:17)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_13">
+                    <label for="day17_13">Mega Challenge - Overloaded Avatar Component (10:05)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_14">
+                    <label for="day17_14">Menu Component Intro (5:24)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_15">
+                    <label for="day17_15">Prop Drilling (4:53)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_16">
+                    <label for="day17_16">Aside: Compound Components Intro (4:52)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_17">
+                    <label for="day17_17">Compound Components in React - Part 1 (3:38)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_18">
+                    <label for="day17_18">Compound Components Quiz (3:48)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_19">
+                    <label for="day17_19">Compound Components in React - Part 2 (2:24)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_20">
+                    <label for="day17_20">Compound Components in React - Part 3 (5:59)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_21">
+                    <label for="day17_21">Summarize Challenge - Compound Components in React (0:42)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_22">
+                    <label for="day17_22">Prop Drilling Problem #2 - Implicit State (3:46)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_23">
+                    <label for="day17_23">The React.Children API (8:55)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_24">
+                    <label for="day17_24">React.Children shortcomings (6:58)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_25">
+                    <label for="day17_25">Context Intro (2:44)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_26">
+                    <label for="day17_26">createContext() & Context Provider (5:42)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_27">
+                    <label for="day17_27">useContext() (6:32)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_28">
+                    <label for="day17_28">Add context to the Menu component (4:28)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_29">
+                    <label for="day17_29">State + Context (6:30)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_30">
+                    <label for="day17_30">Theme switcher final touches (2:04)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_31">
+                    <label for="day17_31">Menu component final touches (4:11)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_32">
+                    <label for="day17_32">A11y in menu component (6:30)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_33">
+                    <label for="day17_33">Aside - Compound components w/ dot syntax (2:46)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_34">
+                    <label for="day17_34">Headless Toggle component (3:54)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_35">
+                    <label for="day17_35">Toggle - setup (5:14)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_36">
+                    <label for="day17_36">Toggle - Planning (2:28)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_37">
+                    <label for="day17_37">Toggle Context (3:41)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_38">
+                    <label for="day17_38">Toggle.Button (6:39)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_39">
+                    <label for="day17_39">Toggle.On & Toggle.Off (4:39)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_40">
+                    <label for="day17_40">Remove Star component (5:07)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_41">
+                    <label for="day17_41">Use Toggle with Menu component (7:44)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_42">
+                    <label for="day17_42">Composing new components with Toggle (8:17)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_43">
+                    <label for="day17_43">onToggle event listener (6:57)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_44">
+                    <label for="day17_44">Menu onClose event (1:59)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_45">
+                    <label for="day17_45">Intro to Refs (6:34)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_46">
+                    <label for="day17_46">Refs and DOM manipulation (5:12)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_47">
+                    <label for="day17_47">Fix onToggle bug using refs (3:21)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_48">
+                    <label for="day17_48">Fix missing onToggle bug using a noop function (2:12)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_49">
+                    <label for="day17_49">Render Props Part 1 (5:05)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_50">
+                    <label for="day17_50">Render Props Part 2 (7:51)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_51">
+                    <label for="day17_51">Render Props Part 3 (5:36)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_52">
+                    <label for="day17_52">Render Props Part 4 - children as render props (2:11)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_53">
+                    <label for="day17_53">Toggle . Display intro (2:05)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_54">
+                    <label for="day17_54">Toggle . Display (6:01)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_55">
+                    <label for="day17_55">Custom Hooks Intro (1:55)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_56">
+                    <label for="day17_56">Custom Hooks - useEffectOnUpdate (7:57)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_57">
+                    <label for="day17_57">Custom Hooks - useToggle (4:45)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_58">
+                    <label for="day17_58">Custom Hooks - useToggle part 2 (3:13)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_59">
+                    <label for="day17_59">Custom Hooks - useToggle part 3 (2:57)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_60">
+                    <label for="day17_60">Custom Hooks - useToggle part 4 (3:04)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_61">
+                    <label for="day17_61">Custom Hooks - useToggle part 5 (3:05)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_62">
+                    <label for="day17_62">Custom Hooks useToggle part 6 (4:56)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_63">
+                    <label for="day17_63">Custom Hooks - useToggle part 7 (1:42)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_64">
+                    <label for="day17_64">Custom Hooks useToggle part 8 (3:41)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_65">
+                    <label for="day17_65">Custom Hooks useToggle part 9 (2:22)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_66">
+                    <label for="day17_66">Reusability section recap (1:39)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_67">
+                    <label for="day17_67">Solo Project - Component Library++ (5:59) - start the project</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day17_68">
+                    <label for="day17_68">Practice: Work on Reusability concepts and the Component Library project.</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <h3 class="day-title text-xl">Day 18: Advanced React - Routing (Part 1)</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_1">
+                    <label for="day18_1">Introduction to React Router 6 (2:54)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_2">
+                    <label for="day18_2">Multi-page vs single-page apps (5:13)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_3">
+                    <label for="day18_3">React Router Setup & BrowserRouter (3:12)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_4">
+                    <label for="day18_4">Routes (2:40)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_5">
+                    <label for="day18_5">BrowserRouter & Routes challenge (1:06)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_6">
+                    <label for="day18_6">Route , path , & element (4:12)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_7">
+                    <label for="day18_7">Quick Re-org (1:01)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_8">
+                    <label for="day18_8">Link (3:59)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_9">
+                    <label for="day18_9">VanLife project bootstrapping (8:03)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_10">
+                    <label for="day18_10">Initial Deploy to Netlify (11:41)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_11">
+                    <label for="day18_11">Mirage JS Server (1:50)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_12">
+                    <label for="day18_12">Challenge : Vans Page - Part 1 (2:14)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_13">
+                    <label for="day18_13">Challenge : Vans Page - Part 2 (9:06)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_14">
+                    <label for="day18_14">Route Params - part 1 (4:12)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_15">
+                    <label for="day18_15">Route Params - part 2 (1:46)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_16">
+                    <label for="day18_16">A11y Update - wrapping complex content in a link (5:48)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_17">
+                    <label for="day18_17">Route Params part 3.1 - useParams ( ) & challenge (4:53)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_18">
+                    <label for="day18_18">Route Params part 3.2 - useParams ( ) challenge (7:10)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_19">
+                    <label for="day18_19">Route Params Quiz (4:15)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_20">
+                    <label for="day18_20">Nested Routes Intro (8:52)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_21">
+                    <label for="day18_21">Fixing the Navbar with a Layout Route (4:52)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_22">
+                    <label for="day18_22">Fixing the Navbar with a Layout Route part 2 (7:42)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_23">
+                    <label for="day18_23">Bootstrap the Host pages (3:57)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_24">
+                    <label for="day18_24">Nesting the /host routes (3:45)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_25">
+                    <label for="day18_25">Creating the Host Layout (6:27)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_26">
+                    <label for="day18_26">Relative Paths (4:25)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_27">
+                    <label for="day18_27">Index Routes (3:48)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_28">
+                    <label for="day18_28">To nest or not to nest ? (5:06)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_29">
+                    <label for="day18_29">Nested Routes Quiz (4:48)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_30">
+                    <label for="day18_30">Add Footer (3:18)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_31">
+                    <label for="day18_31">NavLink (7:12)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_32">
+                    <label for="day18_32">Active Link Styling with NavLink (3:52)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_33">
+                    <label for="day18_33">Active Link Styling with NavLink - part 2 (5:12)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_34">
+                    <label for="day18_34">Adding Host Vans Routes (5:11)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_35">
+                    <label for="day18_35">Optional Side Quest - Building out the Host Vans List and Detail Pages (3:18)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_36">
+                    <label for="day18_36">Building out the Host Van Detail page (8:54)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_37">
+                    <label for="day18_37">Relative Links (7:01)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_38">
+                    <label for="day18_38">Back to all vans (5:13)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_39">
+                    <label for="day18_39">Add /host/vans/:id Nested Routes (8:06)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_40">
+                    <label for="day18_40">Add the Final Navbar ! (6:33)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_41">
+                    <label for="day18_41">Outlet Context (5:30)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_42">
+                    <label for="day18_42">Search Params Intro (7:16)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_43">
+                    <label for="day18_43">useSearchParams (4:03)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_44">
+                    <label for="day18_44">Challenge : Set up search params in VanLife (4:41)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_45">
+                    <label for="day18_45">Filter the array w / the search param (5:04)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_46">
+                    <label for="day18_46">Challenge : Filter the vans in VanLife (1:41)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_47">
+                    <label for="day18_47">Using Links to add search params (2:51)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_48">
+                    <label for="day18_48">Challenge : Filter the vans with Links (3:12)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_49">
+                    <label for="day18_49">Using the search params setter function (3:31)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_50">
+                    <label for="day18_50">Challenge : Filter the vans with a setter function (2:30)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_51">
+                    <label for="day18_51">Caveats to setting params (1:30)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_52">
+                    <label for="day18_52">Merging search params with Links (6:09)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_53">
+                    <label for="day18_53">Merging search params with the setSearchParams function (5:19)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_54">
+                    <label for="day18_54">Challenge : Conditional rendering practice (4:39)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_55">
+                    <label for="day18_55">Fix remaining absolute paths (1:50)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_56">
+                    <label for="day18_56">Back to all vans (2:12)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_57">
+                    <label for="day18_57">Link state (6:29)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_58">
+                    <label for="day18_58">useLocation (7:59)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_59">
+                    <label for="day18_59">Challenge : conditionally render the back button text (2:47)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_60">
+                    <label for="day18_60">404 Page (5:48)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_61">
+                    <label for="day18_61">" Happy Path " vs . " Sad Path " ( new ) (2:32)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_62">
+                    <label for="day18_62">Quick update to our fetching code (2:57)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_63">
+                    <label for="day18_63">Coding the Sad Path - Loading state ( new ) (3:22)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_64">
+                    <label for="day18_64">Coding the Sad Path - Error handling (5:59)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_65">
+                    <label for="day18_65">Update : Accessibility Addition (1:29)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_66">
+                    <label for="day18_66">Initial Login Form (1:50)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_67">
+                    <label for="day18_67">Note from the future : importing image assets in Vite (2:47)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_68">
+                    <label for="day18_68">Protected Routes Intro ( FDCP ) (1:48)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_69">
+                    <label for="day18_69">Protected Routes - AuthRequired Layout Route ( FDCP ) (3:10)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_70">
+                    <label for="day18_70">Protected Routes - Implementing " auth " ( FDCP ) (2:25)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_71">
+                    <label for="day18_71">Protected Routes - Navigate ( FDCP ) (5:34)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_72">
+                    <label for="day18_72">VanLife Protected Routes ( FDCP ) (3:25)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_73">
+                    <label for="day18_73">Protected Routes Quiz (1:39)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_74">
+                    <label for="day18_74">Navigation State ( FDCP ) (5:22)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_75">
+                    <label for="day18_75">Setup for authentication - happy path ( FDCP ) (3:31)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_76">
+                    <label for="day18_76">Authentication setup sad path ( FDCP ) (7:28)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_77">
+                    <label for="day18_77">Navigate to / host route after login ( FDCP ) (2:14)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_78">
+                    <label for="day18_78">History Stack and Replace ( FDCP ) (5:30)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_79">
+                    <label for="day18_79">Challenge - send user to original page (7:33)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_80">
+                    <label for="day18_80">Placeholders are gone ! (2:10)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_81">
+                    <label for="day18_81">Cloud Firestore Setup (6:04)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_82">
+                    <label for="day18_82">Cloud Firestore Code Setup (4:03)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_83">
+                    <label for="day18_83">Collection ref and getVans ( ) function (6:50)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_84">
+                    <label for="day18_84">Create getVan function (3:53)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_85">
+                    <label for="day18_85">Refactor getHostVans function (3:22)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_86">
+                    <label for="day18_86">Final loose ends (1:34)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_87">
+                    <label for="day18_87">Outro (3:09)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day18_88">
+                    <label for="day18_88">Practice: Work on Routing concepts and the VanLife project.</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <h3 class="day-title text-xl">Day 19: Advanced React - Performance</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="day19_1">
+                    <label for="day19_1">Performance Intro (4:08)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day19_2">
+                    <label for="day19_2">Recursive rendering (4:28)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day19_3">
+                    <label for="day19_3">Three phases of " rendering " (6:23)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day19_4">
+                    <label for="day19_4">Rendering Phases Quiz (2:26)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day19_5">
+                    <label for="day19_5">Using Dev Tools to Measure Performance (5:14)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day19_6">
+                    <label for="day19_6">StrictMode - double renders components (7:46)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day19_7">
+                    <label for="day19_7">StrictMode - rerunning side effects (6:27)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day19_8">
+                    <label for="day19_8">Code Splitting , lazy , Suspense - Part 1 (5:19)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day19_9">
+                    <label for="day19_9">Code Splitting , lazy , Suspense - Part 2 (10:17)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day19_10">
+                    <label for="day19_10">useMemo ( ) (6:34)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day19_11">
+                    <label for="day19_11">useMemo ( ) practice (6:25)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day19_12">
+                    <label for="day19_12">React.memo ( ) - reducing rerenders (9:02)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day19_13">
+                    <label for="day19_13">React.memo ( ) practice (3:06)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day19_14">
+                    <label for="day19_14">Value vs . Reference Types & referential equality (4:51)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day19_15">
+                    <label for="day19_15">useMemo ( ) , React.memo ( ) , and referential equality (6:27)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day19_16">
+                    <label for="day19_16">useMemo ( ) practice (2:14)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day19_17">
+                    <label for="day19_17">useCallback ( ) (4:41)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day19_18">
+                    <label for="day19_18">useCallback ( ) practice (9:19)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day19_19">
+                    <label for="day19_19">Course Outro (4:14)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day19_20">
+                    <label for="day19_20">Practice: Work on Performance concepts and optimize a small React app.</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <h3 class="day-title text-xl">Day 20: Final Review & Project Polish</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="day20_1">
+                    <label for="day20_1">Review all challenging concepts from Accessible Development, CSS, APIs, and React.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day20_2">
+                    <label for="day20_2">Revisit any solo projects that felt difficult or incomplete.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day20_3">
+                    <label for="day20_3">Work on a small, personal project to apply all learned skills.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day20_4">
+                    <label for="day20_4">Explore additional resources or documentation for topics of interest.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="day20_5">
+                    <label for="day20_5">Celebrate your progress!</label>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <footer class="footer">
+        <p>&copy; 2025 Frontend Study Plan. All rights reserved.</p>
+    </footer>
+</body>
+</html>
