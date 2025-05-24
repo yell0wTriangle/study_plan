@@ -2957,7 +2957,7 @@
                     return;
                 }
                 showStatusMessage('Saving progress...', 'loading');
-                const docRef = doc(db, 'artifacts', 'your-app-id', 'users', userId, 'studyPlans', 'dayChecklist'); // Replace 'your-app-id' with your actual Firebase App ID
+                const docRef = doc(db, 'artifacts', 'studyplan-5e565', 'users', userId, 'studyPlans', 'dayChecklist');
                 try {
                     await setDoc(docRef, { checkboxStates: checkboxStates }, { merge: true });
                     showStatusMessage('Progress saved!', 'success');
