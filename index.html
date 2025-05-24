@@ -2816,15 +2816,20 @@
         <p>&copy; 2025 Frontend Study Plan. All rights reserved.</p>
     </footer>
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, doc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+<script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
+        import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-firestore.js";
 
-        // Global variables provided by the Canvas environment
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
-        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCLXWU1TWVZSG5V2_Mh9kMGQ29qbp-galk",
+            authDomain: "studyplan-5e565.firebaseapp.com",
+            projectId: "studyplan-5e565",
+            storageBucket: "studyplan-5e565.firebasestorage.app",
+            messagingSenderId: "696205706213",
+            appId: "1:696205706213:web:df273202ec957c5702250c"
+        };
 
         let app;
         let db;
@@ -2878,7 +2883,7 @@
         async function initializeFirebaseAndAuth() {
             try {
                 showStatusMessage('Initializing app...', 'loading');
-                app = initializeApp(firebaseConfig);
+                app = initializeApp(firebaseConfig); // Initialize Firebase with your config
                 db = getFirestore(app);
                 auth = getAuth(app);
 
@@ -2891,13 +2896,9 @@
                     } else {
                         // Sign in anonymously if no user is found
                         try {
-                            if (initialAuthToken) {
-                                await signInWithCustomToken(auth, initialAuthToken);
-                            } else {
-                                await signInAnonymously(auth);
-                            }
+                            await signInAnonymously(auth);
                         } catch (error) {
-                            console.error("Error during anonymous sign-in or custom token sign-in:", error);
+                            console.error("Error during anonymous sign-in:", error);
                             showStatusMessage('Authentication failed. Please try again later.', 'error');
                         }
                     }
@@ -2917,7 +2918,7 @@
                 return;
             }
 
-            const docRef = doc(db, 'artifacts', appId, 'users', userId, 'studyPlans', 'dayChecklist');
+            const docRef = doc(db, 'artifacts', 'your-app-id', 'users', userId, 'studyPlans', 'dayChecklist'); // Replace 'your-app-id' with your actual Firebase App ID
 
             if (unsubscribeSnapshot) {
                 unsubscribeSnapshot(); // Unsubscribe from previous listener if exists
@@ -2956,7 +2957,7 @@
                     return;
                 }
                 showStatusMessage('Saving progress...', 'loading');
-                const docRef = doc(db, 'artifacts', appId, 'users', userId, 'studyPlans', 'dayChecklist');
+                const docRef = doc(db, 'artifacts', 'your-app-id', 'users', userId, 'studyPlans', 'dayChecklist'); // Replace 'your-app-id' with your actual Firebase App ID
                 try {
                     await setDoc(docRef, { checkboxStates: checkboxStates }, { merge: true });
                     showStatusMessage('Progress saved!', 'success');
