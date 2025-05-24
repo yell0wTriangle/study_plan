@@ -2817,174 +2817,256 @@
     </footer>
 
 <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
-        import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-auth.js";
-        import { getFirestore, doc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-firestore.js";
+    // Import necessary Firebase SDK functions
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
+    import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-auth.js";
+    import { getFirestore, doc, setDoc, onSnapshot, getDoc } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-firestore.js";
 
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyCLXWU1TWVZSG5V2_Mh9kMGQ29qbp-galk",
-            authDomain: "studyplan-5e565.firebaseapp.com",
-            projectId: "studyplan-5e565",
-            storageBucket: "studyplan-5e565.firebasestorage.app",
-            messagingSenderId: "696205706213",
-            appId: "1:696205706213:web:df273202ec957c5702250c"
-        };
+    // Your web app's Firebase configuration
+    // This configuration connects your website to your specific Firebase project.
+    const firebaseConfig = {
+        apiKey: "AIzaSyCLXWU1TWVZSG5V2_Mh9kMGQ29qbp-galk",
+        authDomain: "studyplan-5e565.firebaseapp.com",
+        projectId: "studyplan-5e565",
+        storageBucket: "studyplan-5e565.firebasestorage.app",
+        messagingSenderId: "696205706213",
+        appId: "1:696205706213:web:df273202ec957c5702250c"
+    };
 
-        let app;
-        let db;
-        let auth;
-        let userId = null;
-        let unsubscribeSnapshot = null; // To store the unsubscribe function for onSnapshot
+    // Declare global variables for Firebase services and user data
+    let app; // Firebase app instance
+    let db;  // Firestore database instance
+    let auth; // Firebase Authentication instance
+    let userId = null; // Stores the authenticated user's unique ID
+    let unsubscribeSnapshot = null; // Function to unsubscribe from the Firestore real-time listener
 
-        const statusMessageEl = document.getElementById('status-message');
-        const userIdDisplayEl = document.getElementById('user-id-display');
-        const allCheckboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
-        let checkboxStates = {}; // In-memory representation of checkbox states
+    // Get references to DOM elements for displaying status and user ID
+    const statusMessageEl = document.getElementById('status-message');
+    const userIdDisplayEl = document.getElementById('user-id-display');
+    // Select all checkbox input elements on the page
+    const allCheckboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+    // Object to store the checked/unchecked state of each checkbox in memory
+    let checkboxStates = {};
 
-        /**
-         * Displays a temporary message in the status box.
-         * @param {string} message The message to display.
-         * @param {string} type The type of message (e.g., 'loading', 'success', 'error').
-         */
-        function showStatusMessage(message, type = 'info') {
-            statusMessageEl.textContent = message;
-            statusMessageEl.classList.remove('hidden', 'border-red-500', 'border-green-500', 'border-yellow-500', 'border-blue-500');
-            statusMessageEl.classList.add('block');
+    /**
+     * Displays a temporary message in the status box.
+     * @param {string} message The text content of the message.
+     * @param {string} type The type of message (e.g., 'loading', 'success', 'error', 'info') to apply specific styling.
+     */
+    function showStatusMessage(message, type = 'info') {
+        // Set the message text
+        statusMessageEl.textContent = ''; // Clear previous text
+        statusMessageEl.innerHTML = message; // Use innerHTML to allow spinner span
 
-            // Apply type-specific styling
-            if (type === 'loading') {
-                statusMessageEl.innerHTML = `<span class="spinner"></span>${message}`;
-                statusMessageEl.style.borderColor = '#D4A76A'; // Accent color for loading
-                statusMessageEl.style.backgroundColor = '#FFFBEB';
-            } else if (type === 'success') {
-                statusMessageEl.style.borderColor = '#4CAF50'; // Green
-                statusMessageEl.style.backgroundColor = '#E8F5E9';
-            } else if (type === 'error') {
-                statusMessageEl.style.borderColor = '#F44336'; // Red
-                statusMessageEl.style.backgroundColor = '#FFEBEE';
-            } else { // info
-                statusMessageEl.style.borderColor = '#D4A76A';
-                statusMessageEl.style.backgroundColor = '#FFFBEB';
-            }
+        // Remove previous styling classes and ensure it's visible
+        statusMessageEl.classList.remove('hidden', 'border-red-500', 'border-green-500', 'border-yellow-500', 'border-blue-500');
+        statusMessageEl.classList.add('block');
 
-            // Hide after a few seconds unless it's a loading message
-            if (type !== 'loading') {
-                setTimeout(() => {
-                    statusMessageEl.classList.remove('block');
-                    statusMessageEl.classList.add('hidden');
-                }, 3000);
-            }
+        // Apply type-specific styling (border color and background color)
+        if (type === 'loading') {
+            statusMessageEl.innerHTML = `<span class="spinner"></span>${message}`; // Add spinner for loading
+            statusMessageEl.style.borderColor = '#D4A76A'; // Accent color for loading
+            statusMessageEl.style.backgroundColor = '#FFFBEB';
+        } else if (type === 'success') {
+            statusMessageEl.style.borderColor = '#4CAF50'; // Green
+            statusMessageEl.style.backgroundColor = '#E8F5E9';
+        } else if (type === 'error') {
+            statusMessageEl.style.borderColor = '#F44336'; // Red
+            statusMessageEl.style.backgroundColor = '#FFEBEE';
+        } else { // 'info' or default
+            statusMessageEl.style.borderColor = '#D4A76A';
+            statusMessageEl.style.backgroundColor = '#FFFBEB';
         }
 
-        /**
-         * Initializes Firebase and authenticates the user.
-         */
-        async function initializeFirebaseAndAuth() {
-            try {
-                showStatusMessage('Initializing app...', 'loading');
-                app = initializeApp(firebaseConfig); // Initialize Firebase with your config
-                db = getFirestore(app);
-                auth = getAuth(app);
+        // Hide the message after a delay, unless it's a persistent loading message
+        if (type !== 'loading') {
+            setTimeout(() => {
+                statusMessageEl.classList.remove('block');
+                statusMessageEl.classList.add('hidden');
+            }, 3000); // Message disappears after 3 seconds
+        }
+    }
 
-                onAuthStateChanged(auth, async (user) => {
-                    if (user) {
-                        userId = user.uid;
-                        userIdDisplayEl.textContent = `User ID: ${userId}`;
-                        showStatusMessage('Authenticated. Loading your progress...', 'loading');
-                        await loadChecklistStates();
-                    } else {
-                        // Sign in anonymously if no user is found
-                        try {
-                            await signInAnonymously(auth);
-                        } catch (error) {
-                            console.error("Error during anonymous sign-in:", error);
-                            showStatusMessage('Authentication failed. Please try again later.', 'error');
-                        }
+    /**
+     * Initializes Firebase app and sets up user authentication.
+     * This is the entry point for Firebase interaction.
+     */
+    async function initializeFirebaseAndAuth() {
+        try {
+            showStatusMessage('Initializing app...', 'loading');
+            // Initialize the Firebase app with the provided configuration
+            app = initializeApp(firebaseConfig);
+            // Get the Firestore database service instance
+            db = getFirestore(app);
+            // Get the Authentication service instance
+            auth = getAuth(app);
+
+            // Set up an authentication state observer
+            // This function runs whenever the user's sign-in state changes (e.g., on page load, sign in, sign out)
+            onAuthStateChanged(auth, async (user) => {
+                if (user) {
+                    // User is signed in (could be anonymous or a registered user)
+                    userId = user.uid; // Store the user's unique ID
+                    userIdDisplayEl.textContent = `User ID: ${userId}`; // Display user ID on the page
+                    showStatusMessage('Authenticated. Loading your progress...', 'loading');
+
+                    // First, attempt to load the checklist states directly (one-time fetch)
+                    await loadChecklistStates();
+                    // Then, set up a real-time listener for future updates
+                    setupRealtimeListener();
+                } else {
+                    // User is signed out, attempt anonymous sign-in
+                    try {
+                        showStatusMessage('Signing in anonymously...', 'loading');
+                        await signInAnonymously(auth); // Sign in without requiring credentials
+                    } catch (error) {
+                        console.error("Error during anonymous sign-in:", error);
+                        showStatusMessage('Authentication failed. Please try again later.', 'error');
                     }
-                });
-            } catch (error) {
-                console.error("Error initializing Firebase:", error);
-                showStatusMessage('Failed to initialize Firebase. Check console for details.', 'error');
-            }
+                }
+            });
+        } catch (error) {
+            console.error("Error initializing Firebase:", error);
+            showStatusMessage('Failed to initialize Firebase. Check console for details.', 'error');
+        }
+    }
+
+    /**
+     * Sets up a real-time listener to synchronize checklist states from Firestore.
+     * This function is called after the initial load to keep the UI updated.
+     */
+    function setupRealtimeListener() {
+        // Ensure database and user ID are available before setting up the listener
+        if (!db || !userId) {
+            console.warn("Firestore or User ID not available for listener setup.");
+            return;
         }
 
-        /**
-         * Loads checklist states from Firestore.
-         */
-        async function loadChecklistStates() {
+        // Define the document reference path where checklist states are stored
+        // Path: artifacts -> [projectId] -> users -> [userId] -> studyPlans -> dayChecklist
+        const docRef = doc(db, 'artifacts', firebaseConfig.projectId, 'users', userId, 'studyPlans', 'dayChecklist');
+
+        // If a previous listener exists, unsubscribe from it to prevent memory leaks
+        if (unsubscribeSnapshot) {
+            unsubscribeSnapshot();
+        }
+
+        // Set up the real-time listener using onSnapshot
+        // This callback fires immediately with the current data and then again every time the data changes in Firestore
+        unsubscribeSnapshot = onSnapshot(docRef, (docSnap) => {
+            if (docSnap.exists()) {
+                // If the document exists, retrieve its data
+                checkboxStates = docSnap.data().checkboxStates || {}; // Get the checkboxStates object, default to empty if not found
+                // Update the UI based on the fetched states
+                allCheckboxes.forEach(checkbox => {
+                    checkbox.checked = !!checkboxStates[checkbox.id]; // Set checkbox checked state
+                });
+                // Display a success message if data was loaded/updated
+                // Only show "Progress updated!" if it's not the initial load message
+                if (Object.keys(checkboxStates).length > 0 && statusMessageEl.textContent !== 'Progress loaded!') {
+                    showStatusMessage('Progress updated!', 'success');
+                }
+            } else {
+                // If the document does not exist (e.g., first time user), log and reset states
+                console.log("No saved data found for this user (listener). Starting fresh.");
+                checkboxStates = {}; // Clear in-memory states
+                allCheckboxes.forEach(checkbox => checkbox.checked = false); // Ensure all UI checkboxes are unchecked
+                showStatusMessage('No saved progress found.', 'info'); // Inform the user
+            }
+        }, (error) => {
+            // Handle any errors during the real-time listening process
+            console.error("Error listening to document:", error);
+            showStatusMessage('Error loading progress.', 'error');
+        });
+    }
+
+    /**
+     * Loads checklist states from Firestore once using getDoc.
+     * This is primarily for the initial load after authentication.
+     */
+    async function loadChecklistStates() {
+        // Ensure database and user ID are available before attempting to load
+        if (!db || !userId) {
+            console.warn("Firestore or User ID not available for single load.");
+            return;
+        }
+
+        // Define the document reference path
+        const docRef = doc(db, 'artifacts', firebaseConfig.projectId, 'users', userId, 'studyPlans', 'dayChecklist');
+
+        try {
+            // Fetch the document data once
+            const docSnap = await getDoc(docRef);
+            if (docSnap.exists()) {
+                // If data exists, update in-memory states and UI
+                checkboxStates = docSnap.data().checkboxStates || {};
+                allCheckboxes.forEach(checkbox => {
+                    checkbox.checked = !!checkboxStates[checkbox.id];
+                });
+                showStatusMessage('Progress loaded!', 'success'); // Indicate successful load
+            } else {
+                // If no data found, log and reset states
+                console.log("No saved data found for this user (single load). Starting fresh.");
+                checkboxStates = {};
+                allCheckboxes.forEach(checkbox => checkbox.checked = false);
+                showStatusMessage('No saved progress found.', 'info'); // Inform the user
+            }
+        } catch (error) {
+            // Handle any errors during the document fetch
+            console.error("Error getting document:", error);
+            showStatusMessage('Error loading progress.', 'error');
+        }
+    }
+
+    /**
+     * Saves the current checklist states to Firestore.
+     * Uses a debounce mechanism to limit write operations and improve performance.
+     */
+    let saveTimeout; // Variable to hold the timeout ID
+    function saveChecklistStateDebounced() {
+        clearTimeout(saveTimeout); // Clear any existing timeout to reset the debounce timer
+        saveTimeout = setTimeout(async () => {
+            // Ensure database and user ID are available before saving
             if (!db || !userId) {
-                console.warn("Firestore or User ID not available for loading.");
+                console.warn("Firestore or User ID not available for saving.");
+                showStatusMessage('Cannot save: Not authenticated or database not ready.', 'error');
                 return;
             }
-
-            const docRefLoad = doc(db, 'artifacts', 'studyplan-5e565', 'users', userId, 'studyPlans', 'dayChecklist');
-
-            if (unsubscribeSnapshot) {
-                unsubscribeSnapshot(); // Unsubscribe from previous listener if exists
+            showStatusMessage('Saving progress...', 'loading'); // Show saving indicator
+            // Define the document reference path for saving
+            const docRef = doc(db, 'artifacts', firebaseConfig.projectId, 'users', userId, 'studyPlans', 'dayChecklist');
+            try {
+                // Set the document data. { merge: true } ensures existing fields are not overwritten, only updated/added.
+                await setDoc(docRef, { checkboxStates: checkboxStates }, { merge: true });
+                showStatusMessage('Progress saved!', 'success'); // Indicate successful save
+            } catch (error) {
+                // Handle any errors during the save operation
+                console.error("Error saving document:", error);
+                showStatusMessage('Failed to save progress. Please try again.', 'error');
             }
+        }, 500); // Debounce for 500ms: the function will run 500ms after the last call
+    }
 
-            unsubscribeSnapshot = onSnapshot(docRef, (docSnap) => {
-                if (docSnap.exists()) {
-                    checkboxStates = docSnap.data().checkboxStates || {};
-                    allCheckboxes.forEach(checkbox => {
-                        checkbox.checked = !!checkboxStates[checkbox.id];
-                    });
-                    showStatusMessage('Progress loaded successfully!', 'success');
-                } else {
-                    console.log("No saved data found for this user. Starting fresh.");
-                    checkboxStates = {}; // Reset in-memory states if no document
-                    allCheckboxes.forEach(checkbox => checkbox.checked = false); // Ensure all are unchecked
-                    showStatusMessage('No saved progress found. Start checking tasks!', 'info');
-                }
-            }, (error) => {
-                console.error("Error listening to document:", error);
-                showStatusMessage('Error loading progress. Check console for details.', 'error');
+    /**
+     * Adds event listeners to all checklist checkboxes.
+     * When a checkbox state changes, it triggers the debounced save function.
+     */
+    function addCheckboxListeners() {
+        allCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', (event) => {
+                // Update the in-memory checkboxStates object with the new state
+                checkboxStates[event.target.id] = event.target.checked;
+                // Trigger the debounced save function
+                saveChecklistStateDebounced();
             });
-        }
+        });
+    }
 
-        /**
-         * Saves the current checklist states to Firestore.
-         * Implements a simple debounce to avoid too many writes.
-         */
-        let saveTimeout;
-        function saveChecklistStateDebounced() {
-            clearTimeout(saveTimeout);
-            saveTimeout = setTimeout(async () => {
-                if (!db || !userId) {
-                    console.warn("Firestore or User ID not available for saving.");
-                    showStatusMessage('Cannot save: Not authenticated or database not ready.', 'error');
-                    return;
-                }
-                showStatusMessage('Saving progress...', 'loading');
-                const docRef = doc(db, 'artifacts', 'studyplan-5e565', 'users', userId, 'studyPlans', 'dayChecklist');
-                try {
-                    await setDoc(docRef, { checkboxStates: checkboxStates }, { merge: true });
-                    showStatusMessage('Progress saved!', 'success');
-                } catch (error) {
-                    console.error("Error saving document:", error);
-                    showStatusMessage('Failed to save progress. Please try again.', 'error');
-                }
-            }, 500); // Debounce for 500ms
-        }
-
-        /**
-         * Adds event listeners to all checkboxes.
-         */
-        function addCheckboxListeners() {
-            allCheckboxes.forEach(checkbox => {
-                checkbox.addEventListener('change', (event) => {
-                    checkboxStates[event.target.id] = event.target.checked;
-                    saveChecklistStateDebounced();
-                });
-            });
-        }
-
-        // Initialize on window load
-        window.onload = function() {
-            initializeFirebaseAndAuth();
-            addCheckboxListeners();
-        };
-    </script>
+    // Initialize the Firebase app, authentication, and event listeners when the window has fully loaded.
+    window.onload = function() {
+        initializeFirebaseAndAuth();
+        addCheckboxListeners();
+    };
+</script>
 </body>
 </html>
