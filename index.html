@@ -9,8 +9,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            /* Light beige background */
-            background-color: #F8F5EE;
+            background-color: #F8F5EE; /* Light beige background */
             color: #333;
         }
         .container {
@@ -70,12 +69,40 @@
             font-size: 0.85rem;
             color: #A0A0A0;
         }
+        /* Loading spinner styles */
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #D4A76A;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .message-box {
+            background-color: #FFFBEB;
+            border: 1px solid #D4A76A;
+            color: #5C4033;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1 class="text-4xl font-bold mb-4 text-center header">My 20-Day Frontend Study Plan</h1>
         <p class="text-center text-lg mb-6 text-gray-600">Starting May 25, 2025</p>
+
+        <div id="status-message" class="message-box hidden"></div>
+        <div id="user-id-display" class="text-sm text-gray-500 text-center mb-4"></div>
 
         <div class="goal-box">
             <h2 class="text-xl font-semibold mb-2 header">My Goal:</h2>
@@ -2788,5 +2815,175 @@
     <footer class="footer">
         <p>&copy; 2025 Frontend Study Plan. All rights reserved.</p>
     </footer>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Global variables provided by the Canvas environment
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        let app;
+        let db;
+        let auth;
+        let userId = null;
+        let unsubscribeSnapshot = null; // To store the unsubscribe function for onSnapshot
+
+        const statusMessageEl = document.getElementById('status-message');
+        const userIdDisplayEl = document.getElementById('user-id-display');
+        const allCheckboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+        let checkboxStates = {}; // In-memory representation of checkbox states
+
+        /**
+         * Displays a temporary message in the status box.
+         * @param {string} message The message to display.
+         * @param {string} type The type of message (e.g., 'loading', 'success', 'error').
+         */
+        function showStatusMessage(message, type = 'info') {
+            statusMessageEl.textContent = message;
+            statusMessageEl.classList.remove('hidden', 'border-red-500', 'border-green-500', 'border-yellow-500', 'border-blue-500');
+            statusMessageEl.classList.add('block');
+
+            // Apply type-specific styling
+            if (type === 'loading') {
+                statusMessageEl.innerHTML = `<span class="spinner"></span>${message}`;
+                statusMessageEl.style.borderColor = '#D4A76A'; // Accent color for loading
+                statusMessageEl.style.backgroundColor = '#FFFBEB';
+            } else if (type === 'success') {
+                statusMessageEl.style.borderColor = '#4CAF50'; // Green
+                statusMessageEl.style.backgroundColor = '#E8F5E9';
+            } else if (type === 'error') {
+                statusMessageEl.style.borderColor = '#F44336'; // Red
+                statusMessageEl.style.backgroundColor = '#FFEBEE';
+            } else { // info
+                statusMessageEl.style.borderColor = '#D4A76A';
+                statusMessageEl.style.backgroundColor = '#FFFBEB';
+            }
+
+            // Hide after a few seconds unless it's a loading message
+            if (type !== 'loading') {
+                setTimeout(() => {
+                    statusMessageEl.classList.remove('block');
+                    statusMessageEl.classList.add('hidden');
+                }, 3000);
+            }
+        }
+
+        /**
+         * Initializes Firebase and authenticates the user.
+         */
+        async function initializeFirebaseAndAuth() {
+            try {
+                showStatusMessage('Initializing app...', 'loading');
+                app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+                auth = getAuth(app);
+
+                onAuthStateChanged(auth, async (user) => {
+                    if (user) {
+                        userId = user.uid;
+                        userIdDisplayEl.textContent = `User ID: ${userId}`;
+                        showStatusMessage('Authenticated. Loading your progress...', 'loading');
+                        await loadChecklistStates();
+                    } else {
+                        // Sign in anonymously if no user is found
+                        try {
+                            if (initialAuthToken) {
+                                await signInWithCustomToken(auth, initialAuthToken);
+                            } else {
+                                await signInAnonymously(auth);
+                            }
+                        } catch (error) {
+                            console.error("Error during anonymous sign-in or custom token sign-in:", error);
+                            showStatusMessage('Authentication failed. Please try again later.', 'error');
+                        }
+                    }
+                });
+            } catch (error) {
+                console.error("Error initializing Firebase:", error);
+                showStatusMessage('Failed to initialize Firebase. Check console for details.', 'error');
+            }
+        }
+
+        /**
+         * Loads checklist states from Firestore.
+         */
+        async function loadChecklistStates() {
+            if (!db || !userId) {
+                console.warn("Firestore or User ID not available for loading.");
+                return;
+            }
+
+            const docRef = doc(db, 'artifacts', appId, 'users', userId, 'studyPlans', 'dayChecklist');
+
+            if (unsubscribeSnapshot) {
+                unsubscribeSnapshot(); // Unsubscribe from previous listener if exists
+            }
+
+            unsubscribeSnapshot = onSnapshot(docRef, (docSnap) => {
+                if (docSnap.exists()) {
+                    checkboxStates = docSnap.data().checkboxStates || {};
+                    allCheckboxes.forEach(checkbox => {
+                        checkbox.checked = !!checkboxStates[checkbox.id];
+                    });
+                    showStatusMessage('Progress loaded successfully!', 'success');
+                } else {
+                    console.log("No saved data found for this user. Starting fresh.");
+                    checkboxStates = {}; // Reset in-memory states if no document
+                    allCheckboxes.forEach(checkbox => checkbox.checked = false); // Ensure all are unchecked
+                    showStatusMessage('No saved progress found. Start checking tasks!', 'info');
+                }
+            }, (error) => {
+                console.error("Error listening to document:", error);
+                showStatusMessage('Error loading progress. Check console for details.', 'error');
+            });
+        }
+
+        /**
+         * Saves the current checklist states to Firestore.
+         * Implements a simple debounce to avoid too many writes.
+         */
+        let saveTimeout;
+        function saveChecklistStateDebounced() {
+            clearTimeout(saveTimeout);
+            saveTimeout = setTimeout(async () => {
+                if (!db || !userId) {
+                    console.warn("Firestore or User ID not available for saving.");
+                    showStatusMessage('Cannot save: Not authenticated or database not ready.', 'error');
+                    return;
+                }
+                showStatusMessage('Saving progress...', 'loading');
+                const docRef = doc(db, 'artifacts', appId, 'users', userId, 'studyPlans', 'dayChecklist');
+                try {
+                    await setDoc(docRef, { checkboxStates: checkboxStates }, { merge: true });
+                    showStatusMessage('Progress saved!', 'success');
+                } catch (error) {
+                    console.error("Error saving document:", error);
+                    showStatusMessage('Failed to save progress. Please try again.', 'error');
+                }
+            }, 500); // Debounce for 500ms
+        }
+
+        /**
+         * Adds event listeners to all checkboxes.
+         */
+        function addCheckboxListeners() {
+            allCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', (event) => {
+                    checkboxStates[event.target.id] = event.target.checked;
+                    saveChecklistStateDebounced();
+                });
+            });
+        }
+
+        // Initialize on window load
+        window.onload = function() {
+            initializeFirebaseAndAuth();
+            addCheckboxListeners();
+        };
+    </script>
 </body>
 </html>
