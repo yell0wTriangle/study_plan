@@ -2918,7 +2918,7 @@
                 return;
             }
 
-            const docRef = doc(db, 'artifacts', '1:696205706213:web:df273202ec957c5702250c', 'users', userId, 'studyPlans', 'dayChecklist');
+            const docRefLoad = doc(db, 'artifacts', 'studyplan-5e565', 'users', userId, 'studyPlans', 'dayChecklist');
 
             if (unsubscribeSnapshot) {
                 unsubscribeSnapshot(); // Unsubscribe from previous listener if exists
