@@ -2822,16 +2822,22 @@
     import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-auth.js";
     import { getFirestore, doc, setDoc, onSnapshot, getDoc } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-firestore.js";
 
-    // Your web app's Firebase configuration
-    // This configuration connects your website to your specific Firebase project.
+    // Firebase configuration loaded from Vercel Environment Variables
+    // These variables are typically injected into the client-side code by Vercel's build process.
     const firebaseConfig = {
-        apiKey: "AIzaSyCLXWU1TWVZSG5V2_Mh9kMGQ29qbp-galk",
-        authDomain: "studyplan-5e565.firebaseapp.com",
-        projectId: "studyplan-5e565",
-        storageBucket: "studyplan-5e565.firebasestorage.app",
-        messagingSenderId: "696205706213",
-        appId: "1:696205706213:web:df273202ec957c5702250c"
+        apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+        authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+        projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+        storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+        messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+        appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
     };
+
+    // For Vercel, we will use a fixed app ID for the 'artifacts' collection path.
+    // In a production Vercel environment, you might define this as another environment variable.
+    // For simplicity, we'll use 'studyplan-vercel-app' as a placeholder.
+    // You can change this to a unique identifier for your Vercel deployment.
+    const appId = 'studyplan-vercel-app';
 
     // Declare global variables for Firebase services and user data
     let app; // Firebase app instance
@@ -2943,8 +2949,8 @@
         }
 
         // Define the document reference path where checklist states are stored
-        // Path: artifacts -> [projectId] -> users -> [userId] -> studyPlans -> dayChecklist
-        const docRef = doc(db, 'artifacts', firebaseConfig.projectId, 'users', userId, 'studyPlans', 'dayChecklist');
+        // Path: artifacts -> [appId] -> users -> [userId] -> studyPlans -> dayChecklist
+        const docRef = doc(db, 'artifacts', appId, 'users', userId, 'studyPlans', 'dayChecklist');
 
         // If a previous listener exists, unsubscribe from it to prevent memory leaks
         if (unsubscribeSnapshot) {
@@ -2992,7 +2998,7 @@
         }
 
         // Define the document reference path
-        const docRef = doc(db, 'artifacts', firebaseConfig.projectId, 'users', userId, 'studyPlans', 'dayChecklist');
+        const docRef = doc(db, 'artifacts', appId, 'users', userId, 'studyPlans', 'dayChecklist');
 
         try {
             // Fetch the document data once
@@ -3034,7 +3040,7 @@
             }
             showStatusMessage('Saving progress...', 'loading'); // Show saving indicator
             // Define the document reference path for saving
-            const docRef = doc(db, 'artifacts', firebaseConfig.projectId, 'users', userId, 'studyPlans', 'dayChecklist');
+            const docRef = doc(db, 'artifacts', appId, 'users', userId, 'studyPlans', 'dayChecklist');
             try {
                 // Set the document data. { merge: true } ensures existing fields are not overwritten, only updated/added.
                 await setDoc(docRef, { checkboxStates: checkboxStates }, { merge: true });
@@ -3068,5 +3074,6 @@
         addCheckboxListeners();
     };
 </script>
+
 </body>
 </html>
